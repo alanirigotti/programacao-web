@@ -1,0 +1,99 @@
+<!-- EXEMPLO DE DROPDOWN -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Minha página</title> 
+    <style> 
+    @media screen and (max-width: 400px) {  
+        #menuHorizontal { 
+            display: none; 
+        }   
+
+        @media screen and (min-width: 426px) {
+            #menuHorizontal {
+                display: none;
+            }
+        }
+    }
+
+        nav {       
+        padding: 10px;
+        background-color: purple;
+        color: #000;  
+        text-decoration: none;
+        }   
+        
+        nav hover {
+            text-decoration: underline;
+            color: white;
+        } 
+          
+ 
+        nav a { 
+        color: black; 
+        text-decoration: none;   
+        } 
+          
+        nav li { 
+        text-align: center;
+        font-weight: bold; 
+        color: black;
+        list-style: none;
+        padding: 5px 8px;
+        }
+
+        .menuPrincipal > li { 
+        display: inline-block; 
+        }  
+ 
+        .subMenu {
+            background-color: #000;
+            visibility: hidden;   
+            display: block;
+        }  
+        
+        .menuPrincipal > li:hover .subMenu { 
+    /* display: block;*/ 
+        visibility: visible;  
+        }  
+
+    </style>
+ 
+</head>
+    <body> 
+        <nav id="menuHorizontal">  
+            <!-- dropdown -->  
+                <!-- referencia a componetização -->
+                <ul class="menuPrincipal">
+                    <!-- lista de itens -->
+                <li><a href="#"> Opção 1 </li>  
+                <li><a href="#"> Opção 2 </li> 
+                     <ul class="subMenu">  
+                        <li><a href="#"> Opção 2.1 </li> 
+                        <li><a href="#"> Opção 2.2 </li> 
+                     </ul> 
+                <li><a href="#"> Opção 3 </li>     
+             </ul> 
+         
+        <div>  
+           <ol>
+           <li> Item 1</li>
+           <li> Item 2</li>
+           <li> Item 3</li>
+           </ol>
+              </nav>
+                <div id="mostra" style="border: 1px solid black; height: 100px; display: none;">Vou esconder esta div"</div> 
+                <div>  
+                    Essa aparece.
+                    <button onclick="document.getElementById('mostra').style.display='block';">Mostrar</button> 
+                    <button onclick="document.getElementById('mostra').style.display='none';">Esconder</button> 
+                    <button onclick="document.getElementById('mostra').innerHTML='Texto mudado';">Muda texto</button>
+                </div>   
+        </div>   
+    </body>     
+</html> 
+ 

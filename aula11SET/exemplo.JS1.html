@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo JavaScript</title>
+    <script src="JS/funcoes.js"></script>
+    </head>
+
+    <style>
+        .classePadrao{
+            background-color: lightblue;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-weight: bold;
+            color: brown;
+            padding: 10px;
+
+        }
+
+        .classeDiff{
+            background-color: blue;
+            color: white;
+            font-style: italic;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 15px;
+        }
+ 
+        table {
+            border-collapse: collapse;
+            
+        }
+
+        tr {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        table, tr, td {
+
+        }
+    </style>
+    <script>
+        function criaP(){
+            var vNoPai = document.getElementById('noPai');
+            var vNovoP = document.createElement('p');
+            vNovoP.innerHTML = "Novo parágrafo";
+            vNoPai.appendChild(vNovoP);
+        }
+ 
+        function removeP(){
+            var vNoPai = document.gsetElementById('noPai');
+            vNoPai.removeChild(vNoPai.lastChild);
+
+        }
+    </script>
+    <script>
+        const vData = new Date();
+        document.getElementById('noPai').innerHTML = vData;
+        console.log(vData)
+    </script> 
+</head>
+<body>
+    
+    <main>
+        <button onclick="alert('Botão clicado')">Mostrar mensagem</button>
+        <button onclick="mostrarAlert()">Mostrar Mensagem 2</button>
+        <button onclick="mostrarAlert2('Botão clicado')">Mostrar mensagem 3</button>
+        
+        <div>
+            <button id="botao" onclick="document.getElementById('botao').style.backgroundColor='blue'">Clique aqui</button>
+            <button onclick="document.getElementById('invisivel').style.display='block'">Mostra Div</button>
+            <button onclick="document.getElementById('invisivel').style.display='none'">Esconde div</button>
+            <button onclick="document.getElementById('altera').innerHTML='Valor div alterado com sucesso!'">Alterar div</button>
+            <button onclick="document.getElementById('divClasse').classList.remove('classePadrao');document.getElementById('divClasse').classList.replace('classeDiff');">Altera classe div padrao</button>
+            <button onclick="criaP()">Cria P</button>
+            <button onclick="removeP()">Remove P</button>
+        </div>
+        
+        <div id="invisivel" style="display: none;">
+            Estou invisível!
+        </div>
+        <div id="altera">
+            Esse é meu texto original!
+        </div>
+        <div class="classePadrao">Essa é minha classe padrão</div>
+        <div class="classePadrao" id="divClasse">Texto da div, com a classe Padrão</div>
+        <div id="noPai">
+        </div>
+            <div>  
+                function insItem() {
+                    var vLista = document.getElement('toDoList');
+                    var vItem = document.createElement('li'); 
+                    vItem.innerHTML = "Novo item";
+                    vLista.appendChild(vItem);  
+                } 
+
+                function insPenultimo() {
+                    var vLista = document.getElement('toDoList');
+                    var vItem = document.createEelement("li");
+                    vItem.innerHTML = "Penúltimo item";
+                    vLista.insertBefore(vItem, vLista.lastChild);
+                }
+
+                function insPrimeiro() {
+                    var vLista - document.getElement ('toDoList');
+                    var vItem = document.createElement("li");   
+                    vItem.innerHTML = "Primeiro item";
+                    vLista.insertBefore(vItem, vLista.firstChild);
+                } 
+            </div>
+            <script>  
+                function insereLinha() {
+                    var vTabela = document.getElementById('tabela');
+                    var vLinha = vTbaela.insertRow(0) // -1
+                    var vTD1 = vLinha.insertCell(0);
+                    vTD1.innerHTML = "a";
+                    var vTD2 = vLinha.insertCell(1);
+                    vTD2.innerHTML = "b";
+                    var vTD1 = vLinha.insertCell(2);
+                    vTD1.innerHTML = "c";
+                 
+                } 
+                </script>
+                <div> 
+                    <button onclick="insItem()">Inserir novo item</button>
+                    <button onclick="insPenultimo()">Inserir penúltimo item</button>
+                    <button onclick="insPrimeiro()">Inserir primeiro item</button>
+ 
+                    <p> To Do List </p>
+                    <ul>id='toDoList'</ul>
+                </div>
+            <div>
+                <button onclick="insereLinha()">Inserir nova linha</button> 
+                <table id="tabela"> 
+                <tr><td>1</td><td>2</td><td>3</td></tr>
+                <tr>4</td><td>5</td><td>6</td></tr>
+                <tr><td>7</td><td>8</td><td>9</td></tr>
+                </table> 
+            </div>
+            </script> 
+
+        <div> 
+            <button onclick="insItem"></button>
+        </div>
+    </main>
+    
+
+    <script>
+        function mostrarAlert(){
+           return alert("Botão clicado 2"); 
+        }
+        var variavel = 5;
+        console.log(variavel);
+        variavel = 'Marcos';
+        console.log(variavel);
+
+        var numero = 2;
+
+        if(numero % 2 == 0){
+            console.log('O número ' + numero + ' é par'); 
+        }else {
+            console.log('O número ' + numero + ' é ímpar')
+        }
+
+        var vetor = [1,2,3,4,5];
+        console.log(vetor[0]);
+
+        var vetor2 = [1, 'Marcos', true, {"codigo" : 123, "cargo" : "professor"}];
+
+        console.log(vetor2[1] + " " + vetor2[3].cargo);
+        for (let i = 0; i < vetor2[3].cargo; i++) {
+            console.log(vetor2[i]);
+        }
+
+        var numero = 8;
+
+        if(numero % 2 == 0){
+            console.log('O número ' + numero +' é par' )
+        }else {
+            console.log('O número ' + numero + ' é ímpar')
+        }
+
+        var soma = retornaSoma(2,3)
+        console.log(soma);
+
+        var nomePessoa = 'Marcos Rogério Cardoso';
+        console.log(nomePessoa.length);
+        console.log(nomePessoa.substring(0,6));
+        console.log(nomePessoa.substring(0,5)); 
+    </script>
+</body>
+</html>

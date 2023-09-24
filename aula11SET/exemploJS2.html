@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo JavaScript 2</title>
+    <script src="JS/classes.js"></script>
+</head>
+<body>
+    <script>
+        var vPessoa = new Pessoa("Marcos", "Analista");
+        var vProfessor = 
+
+        function infoPessoa(){
+            document.getElementById('mensagem').innerHTML = vPessoa.getNome() + "Tem o cargo de " +vPessosa.getCargo();
+        }
+        function alteraCargo() {
+            vPessoa.setCargo('Programador');
+            document.getElementById('mensagem').innerHTML = vPessoa.getNome() + " agora tem o cargo de " +vPessoa.getCargo();
+        }
+        function retNomeProf() {
+            document.getElementById('mensagem').innerHTML = vProfessor.getNome() + "Tem o cargo de " +vProfessor.getCargo() + " e é professor do depto " + vProfessor.getDisciplina();
+        }
+    </script>
+
+
+    <header>
+        <h1>Exemplo de JavaScript 2</h1>
+    </header>
+    
+    <main>
+        <div>
+            <button onclick="infoPessoa()">Informa pessoa</button>
+            <button onclick="alteraCargo()">Altera cargo</button>
+            <button onclick="retNomeProf()">Retorna nome do professor</button>
+            
+            <div id="mensagem"></div>
+        </div>
+    </main>
+
+    funciton
+</body>
+</html>

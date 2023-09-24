@@ -1,0 +1,64 @@
+.header {
+    background-color:aquamarine;
+    text-align: center;
+    padding: 20px;
+} 
+   
+ 
+ .generica {
+    background-color: aqua;
+    font-family: 'Courier New', Courier, monospace;
+    color: brown;
+    font-weight: 100 ;
+} 
+
+nav a { 
+ background-color: yellow;
+    color: purple;
+    font-weight: 100; 
+    font-size: 0.6em; 
+    margin: 5px;
+    
+}  
+
+nav a:houver { 
+    color: purple;
+    font-weight: 100;
+    font-size: 0.6em; 
+    margin: 5px;   
+ 
+}
+ 
+.exemploTab {
+    border: 1px solid black; 
+    border-collapse: collapse;
+    padding: 8px;
+}   
+
+.exemploTab td:active {
+    font-weight: bold ;  
+}   
+  
+.exemploTab tr:first-child {
+    font-family: Verdana, Verdana, Geneva, Tahoma, sans-serif;
+}
+ 
+/* pega a ultima linha e coloca em vermelho
+*/
+.exemploTab tr:last-child {
+      color: red;
+}     
+
+/* pega as linhas pares (2,4,6...n) e coloca o cor de fundo como branca*/
+.exemploTab tr:nth-child(odd) {
+    background-color: blue;
+}  
+ 
+/** o 3n§1 pega as linhas impares ) e coloca o cor de fundo como branca
+.exemploTab tr:nth-child(3n+1/odd/even) {
+    background-color: blue;
+} 
+*/ 
+
+
+ 
