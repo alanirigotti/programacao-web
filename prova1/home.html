@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <!-- Responsividade screen -->
+    <!-- Responsividade screen -->
+    <!-- Usuário na barra de menu -->
+    <!-- Local Storage -->
+    <!-- comparar com o enunciado e enviar -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VS-AI</title>
+    <link rel="icon" href="alva-icon.png" type="image/png" sizes="20px">
+    <style>
+ 
+        a:link {
+        color: white; 
+        outline: none; 
+        text-decoration: underline none;
+        }
+
+        a:visited {
+            color: white;
+        }
+
+        a:hover { 
+            color: black;
+        }  
+        
+        a:active {
+            color: black;  
+        } 
+        body {
+            font-family: Arial, sans-serif;   
+            margin: 0;
+            padding: 0;
+        }  
+
+        header {
+            background-color: #b054a8;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #9a38c1;
+            color: #fff;
+            padding: 10px;
+        }
+  
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #b054a8;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .logo {
+            float: left; 
+            margin-right: 20px; 
+        }
+    </style>
+</head> 
+    <header> 
+             <a href="home.html">
+                <img src="alva-icon.png" alt="Ícone da Alva" width="50" height="50" class="logo">
+            </a>    
+        <h1>Alva,</h1>
+        <h6>your virtual secretary</h6>
+    </header>  
+ 
+    <nav>   
+        <ul>       
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#" id="login-link">Login</a></li>
+            <li><a href="sobreNos.html">Sobre nós</a></li>
+        </ul>      
+    </nav> 
+  <body>
+    <div id="login-form" style="display: none; text-align: center;">
+        <h2>Login</h2>
+
+        <form id="auth-form" style="color: #333;">  
+            <div>   
+            <label for="login">Login:</label>
+            <input id="login" name="login" placeholder="Informe seu nome" type="text" required autofocus pattern="[A-Za-z ']{4,}" title="O nome precisa ter pelo menos 3 caracteres">
+            <br><br>
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" inputmode="numeric" placeholder="Informe sua senha" required>
+            <br><br>
+            <button id="button-validation" type="submit">Autenticar</button>
+            <br><br>
+        </div>         
+        </form>
+
+    <script>
+        const loginForm = document.getElementById('login-form');
+        const authForm = document.getElementById('auth-form');
+        const loginLink = document.getElementById('login-link');
+
+        loginLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            loginForm.style.display = 'block';
+        }); 
+
+        authForm.addEventListener('submit', function (e) {
+            e.preventDefault();    
+
+            // Obtém os valores dos campos de login e senha
+    const loginInput = document.getElementById('login').value;
+    const senhaInput = document.getElementById('senha').value;
+ 
+    // Verifica se os campos de login e senha estão preenchidos
+    if (loginInput && senhaInput) {
+        // Cria um objeto para representar os dados de login
+        const dadosDeLogin = {
+            login: loginInput,
+            senha: senhaInput 
+        }; 
+ 
+        // Converte o objeto em uma string JSON
+        const dadosDeLoginJSON = JSON.stringify(dadosDeLogin);
+ 
+        // Armazena os dados no localStorage com uma chave específica (por exemplo, "dadosLogin")
+        localStorage.setItem('dadosLogin', dadosDeLoginJSON);
+
+        // Informa ao usuário que o login foi bem-sucedido
+        alert("Login realizado com sucesso!");
+   
+        // Redireciona para a página inicial (ou outra página relevante)
+        loginForm.style.display = 'none'; // Oculta o formulário após autenticação
+        loginLink.style.display = 'none'; // Oculta o link de login após autenticação
+        window.location.href = "cadastro.html"; 
+    } else {  
+        // Exibe uma mensagem de erro se os campos não estiverem preenchidos
+        alert('Informe os dados de autenticação.');
+    }
+}); 
+    </script>
+    <footer>        
+        Equipe: Alani Rigotti de Oliveira
+    </footer>  
+</body>
+</html>
